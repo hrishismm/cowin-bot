@@ -3,7 +3,7 @@ from twilio.twiml.messaging_response import MessagingResponse
 from urllib.request import urlopen
 import json
 import requests
-#import emoji
+import emoji
 import re
 
 def isValidPinCode(pinCode):
@@ -48,7 +48,12 @@ def sms_reply():
     #Create reply
     resp = MessagingResponse()
     if incoming_msg == 'hello':
-            response ="Helllo"
+            response = emoji.emojize("""
+*Hi! I am the Cowin Bot* :wave:
+Let's be friends :wink:
+You can give me the following command:
+:black_small_square: *'pincode-<yourpincode>':* Get info about the available slots at the vaccination center near you! 
+""", use_aliases=True)
             resp.message(response)
             responded = True
     
@@ -59,7 +64,7 @@ def sms_reply():
         print(test)
         if(isValidPinCode(test)):
                 headers={'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36'}
-                r = requests.get(url="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode="+test+"&date=10-05-2021",headers=headers)
+                r = requests.get(url="https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode="+test+"&date=12-05-2021",headers=headers)
                 json_text=r.text
                 json_text=json.loads(json_text)
                 try:
