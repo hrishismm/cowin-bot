@@ -2,10 +2,10 @@
 
 ##**_A whatsapp bot to get information about the vaccine slots available by entering the pincode_**
 
-#Screenshots
-!![](images/first.jpeg)
-!![](images/second.jpeg)
-!![](images/third.jpeg)
-!![](images/fourth.jpeg)
+
+!![First Step](images/first.jpeg)
+!![Second Step](images/second.jpeg)
+!![Output](images/third.jpeg)
+!![Output](images/fourth.jpeg)
 
 
